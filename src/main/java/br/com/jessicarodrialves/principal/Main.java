@@ -1,7 +1,6 @@
 package br.com.jessicarodrialves.principal;
 
 import br.com.jessicarodrialves.controller.ConversorMoedaController;
-import br.com.jessicarodrialves.model.ConversorMoeda;
 
 import java.io.IOException;
 import java.util.Scanner;
@@ -46,28 +45,28 @@ public class Main {
                 validaLoop = true;
                 break;
             case 2:
-
-                System.out.println("2 - Peso Argentino => Dólar");
+                moedaOrigem = "ARS";
+                moedaDestino = "USD";
                 validaLoop = true;
                 break;
             case 3:
-
-                System.out.println("3 - Dólar => Real Brasileiro");
+                moedaOrigem = "USD";
+                moedaDestino = "BRL";
                 validaLoop = true;
                 break;
             case 4:
-
-                System.out.println("4 - Real Brasileiro => Dólar");
+                moedaOrigem = "BRL";
+                moedaDestino = "USD";
                 validaLoop = true;
                 break;
             case 5:
-
-                System.out.println("5 - Dólar => Peso Colombiano");
+                moedaOrigem = "USD";
+                moedaDestino = "COP";
                 validaLoop = true;
                 break;
             case 6:
-
-                System.out.println("6 - Peso Colombiano => Dólar");
+                moedaOrigem = "COP";
+                moedaDestino = "USD";
                 validaLoop = true;
                 break;
             case 7:
@@ -80,8 +79,7 @@ public class Main {
                 validaLoop = true;
                 break;
             }
-
-            conversorMoedaController.converterValor(moedaOrigem,moedaDestino,valorQueSeraConvertido);
+            Double resultado = conversorMoedaController.converterValor(moedaOrigem, moedaDestino, valorQueSeraConvertido);
 
         } while (validaLoop);
     }
