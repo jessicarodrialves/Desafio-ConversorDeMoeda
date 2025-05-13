@@ -39,42 +39,34 @@ public class Main {
                 valorQueSeraConvertido = recebeDados.nextDouble();
             }
 
-
-
         switch (opcao) {
             case 1:
                 moedaOrigem = "USD";
                 moedaDestino = "ARS";
-
                 validaLoop = true;
                 break;
             case 2:
-                System.out.println(" Informe o valor a ser convertido:  ");
-                valorQueSeraConvertido = recebeDados.nextDouble();
+
                 System.out.println("2 - Peso Argentino => Dólar");
                 validaLoop = true;
                 break;
             case 3:
-                System.out.println(" Informe o valor a ser convertido:  ");
-                valorQueSeraConvertido = recebeDados.nextDouble();
+
                 System.out.println("3 - Dólar => Real Brasileiro");
                 validaLoop = true;
                 break;
             case 4:
-                System.out.println(" Informe o valor a ser convertido:  ");
-                valorQueSeraConvertido = recebeDados.nextDouble();
+
                 System.out.println("4 - Real Brasileiro => Dólar");
                 validaLoop = true;
                 break;
             case 5:
-                System.out.println(" Informe o valor a ser convertido:  ");
-                valorQueSeraConvertido = recebeDados.nextDouble();
+
                 System.out.println("5 - Dólar => Peso Colombiano");
                 validaLoop = true;
                 break;
             case 6:
-                System.out.println(" Informe o valor a ser convertido:  ");
-                valorQueSeraConvertido = recebeDados.nextDouble();
+
                 System.out.println("6 - Peso Colombiano => Dólar");
                 validaLoop = true;
                 break;
@@ -90,7 +82,6 @@ public class Main {
             }
 
             conversorMoedaController.converterValor(moedaOrigem,moedaDestino,valorQueSeraConvertido);
-
 
         } while (validaLoop);
     }
