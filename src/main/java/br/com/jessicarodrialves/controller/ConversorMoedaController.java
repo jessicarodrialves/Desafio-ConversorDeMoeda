@@ -2,9 +2,7 @@ package br.com.jessicarodrialves.controller;
 
 import br.com.jessicarodrialves.model.ConversorMoeda;
 import br.com.jessicarodrialves.model.ConversorMoedaRecord;
-import com.google.gson.FieldNamingPolicy;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
+import com.google.gson.*;
 
 import java.io.IOException;
 import java.net.URI;
@@ -29,7 +27,11 @@ public class ConversorMoedaController {
         Gson gson = new Gson();
         ConversorMoedaRecord cotacaoRecord = gson.fromJson(json, ConversorMoedaRecord.class);
 
-        Double cotacao = cotacaoRecord.conversion_rates().get(moedaDestino.toUpperCase());
+        JsonObject jsonObject = JsonParser.parseString(json).getAsJsonObject();
+        JsonObject conversionRates = jsonObject.getAsJsonObject("conversion_rates");
+
+        Double cotacao = conversionRates.get(moedaDestino.toUpperCase()).getAsDouble();
+
         String cotacaoFormatada = String.format("%.10f",cotacao);
         System.out.println("Cotação obtida:" + cotacaoFormatada);
         Double resultado = cotacao * valorQueSeraConvertido;
